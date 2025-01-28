@@ -4,9 +4,11 @@ and also as the last 2 chars of the string,
 so "hixxxhi" yields 1 (we won't count the end substring).
 """
 def last2(string):
-    substring = string[-2:]
+    if len(string) < 2:
+        return 0
+    substring = string[len(string) - 2:]
     count = 0
-    for i in range(len(substring)):
-        if string[i:i+2] == substring
-            count += 1
+    for i in range(len(string)-2):
+        if string[i:i+2] == substring:
+            count = count + 1
     return count
